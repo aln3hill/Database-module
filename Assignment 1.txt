@@ -1,10 +1,12 @@
 1. What data types do each of these values represent?
 
-"A Clockwork Orange"  - STRING
+"A Clockwork Orange"  - TEXT
 42 - INTEGER
-09/02/1945  -  STRING 
+09/02/1945  -  DATE
 98.7  -  FLOAT
-$15.99  - STRING 
+$15.99  - TEXT
+
+(source: http://www.postgresqltutorial.com/postgresql-data-types/) 
 
 2. Explain when a database would be used. Explain when a text file would be used.
 
@@ -20,7 +22,12 @@ necessary to use a database.
 SQL is a declarative programming language and not procedural as many other languages. 
 
 4. In your own words, explain how the pieces of a database system fit together at a high level.
+I am not sure wxactly to what pieces the question is referring to, so below is my take on it :) 
 
+A database a storage system where data can be stored and accessed. It consists of tables that follows a specific schema that declares 
+the columns and data types for each table. Tables in a database can be related to each other and they will then have foreign keys as a column
+that is referring to a primary key in another table. This allows us to store data separate and minimize redundancy, but still keep the ability 
+to link data together. 
 
 
 5. Explain the meaning of table, row, column, and value.
@@ -30,7 +37,7 @@ that will be stored and a row represents one entity in the database. A value is 
 
 6. List three data types that can be used in a table.
 
-Integer, String and Float. 
+Integer, Text and Float. 
 
 7. Given this payments table, provide an English description of the following queries and include their results:
 
@@ -59,7 +66,7 @@ Results:
      FROM payments
      WHERE payee = 'Mega Foods';
 
-Select all the data from teh payment table where the payee's name is equal to Mega Food
+Select all the data from the payment table where the payee's name is equal to Mega Food
 
 Results: 
 5/15/2016, Mega Food, 124.93, Groceries
@@ -67,14 +74,21 @@ Results:
 
 8. Given this users table, write SQL queries using the following criteria and include the output:
 
-The email and sign-up date for the user named DeAndre Data.
+* The email and sign-up date for the user named DeAndre Data.
 
 SELECT email, signup FROM users where name = 'DeAndre Data'
+Results: 
+datad@comcats.net, 2008-01-20
 
-The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+* The user ID for the user with email 'aleesia.algorithm@uw.edu'.
 
 SELECT userid from users where email = 'aleesia.algorithm@uw.edu'
+Results: 
+1
 
-All the columns for the user ID equal to 4.
+* All the columns for the user ID equal to 4.
 
 SELECT * from users where userid = 4
+Results: 
+4, Brandy Boolean, bboolean@nasa.gov, 1999-10-15
+
